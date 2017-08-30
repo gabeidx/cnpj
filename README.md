@@ -20,7 +20,7 @@ yarn add cnpj
 import CNPJ from 'cnpj';
 
 // Validation
-const valid = CNPJ.isValid('38.981.218/0001-47'); // true
+const valid = CNPJ.validate('38.981.218/0001-47'); // true
 
 // Format
 const formatted = CNPJ.format(88415345000157) // 88.415.345/0001-57
