@@ -20,7 +20,11 @@
   "bugs": {
     "url": "https://github.com/gabrielizaias/cnpj/issues"
   },
-  "author": "Gabriel Izaias <gabriel.izaias@gmail.com>",
+  "author": {
+    "name": "Gabriel Izaias",
+    "email": "gabriel.izaias@gmail.com",
+    "url": "https://izaias.co"
+  },
   "license": "MIT",
   "devDependencies": {
     "ava": "^0.22.0",
