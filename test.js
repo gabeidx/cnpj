@@ -44,3 +44,8 @@ test('format CNPJ', t => {
   t.is(CNPJ.format('95241373000160'), '95.241.373/0001-60')
   t.is(CNPJ.format('a9b5c2d4e1f3g7h3i0j0k0l1m6n0o'), '95.241.373/0001-60')
 })
+
+test.only('generate CNPJ', t => {
+  t.is(CNPJ.validate(CNPJ.generate()), true)
+  t.is(/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/.test(CNPJ.generate()), true)
+})
