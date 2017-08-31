@@ -39,7 +39,7 @@ test('invalid sequential CNPJs', t => {
   t.is(CNPJ.validate('00000000000000'), false)
 })
 
-test.only('format CNPJ', t => {
+test('format CNPJ', t => {
   t.is(CNPJ.format(15548368000166), '15.548.368/0001-66')
   t.is(CNPJ.format('95241373000160'), '95.241.373/0001-60')
   t.is(CNPJ.format('a9b5c2d4e1f3g7h3i0j0k0l1m6n0o'), '95.241.373/0001-60')
