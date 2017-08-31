@@ -69,5 +69,17 @@ export default class CNPJ {
    * Generates a valid CNPJ
    * @return {String} The generated CNPJ
    */
-  static generate() {}
+  static generate() {
+    let cnpj = ''
+    let i = 12
+
+    while (i--) {
+      cnpj += Math.floor(Math.random() * 9)
+    }
+
+    cnpj += digit(cnpj)
+    cnpj += digit(cnpj)
+
+    return CNPJ.format(cnpj)
+  }
 }
