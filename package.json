@@ -2,9 +2,11 @@
   "name": "cnpj",
   "version": "0.1.0",
   "description": "Format, validate and generate CNPJ numbers",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src -d dist",
+    "postinstall": "npm run build",
+    "test": "ava"
   },
   "keywords": [
     "cpnj",
@@ -20,5 +22,42 @@
     "url": "https://github.com/gabrielizaias/cnpj/issues"
   },
   "author": "Gabriel Izaias <gabriel.izaias@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.22.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.26.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.4",
+    "prettier": "^1.6.1"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "printWidth": 80,
+    "useTabs": false,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "parser": "typescript"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  }
 }
