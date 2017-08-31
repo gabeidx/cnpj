@@ -4,21 +4,21 @@
  * @return {Number}
  */
 const digit = numbers => {
-  let index = 2;
+  let index = 2
 
   const reverse = numbers
     .split('')
-    .reduce((buffer, number) => [+number].concat(buffer), []);
+    .reduce((buffer, number) => [+number].concat(buffer), [])
 
   const sum = reverse.reduce((buffer, number) => {
     buffer += number * index
     index = index === 9 ? 2 : index + 1
     return buffer
-  }, 0);
+  }, 0)
 
-  const mod = sum % 11;
+  const mod = sum % 11
 
-  return mod < 2 ? 0 : 11 - mod;
+  return mod < 2 ? 0 : 11 - mod
 }
 /**
  * Remove non digit characters from CNPJ
@@ -59,7 +59,10 @@ export default class CNPJ {
    * @return {String} The formatted CNPJ
    */
   static format(cnpj) {
-    return clean(cnpj).replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, "$1.$2.$3/$4-$5");
+    return clean(cnpj).replace(
+      /^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/,
+      '$1.$2.$3/$4-$5'
+    )
   }
 
   /**
