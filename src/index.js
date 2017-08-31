@@ -58,7 +58,9 @@ export default class CNPJ {
    * @param {String|Number} cnpj The CNPJ to be formatted
    * @return {String} The formatted CNPJ
    */
-  static format(cnpj) {}
+  static format(cnpj) {
+    return clean(cnpj).replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, "$1.$2.$3/$4-$5");
+  }
 
   /**
    * Generates a valid CNPJ
