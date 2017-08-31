@@ -27,10 +27,7 @@
     "ava": "^0.22.0",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.0",
-    "babel-register": "^6.26.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^4.0.4",
-    "prettier": "^1.6.1"
+    "babel-register": "^6.26.0"
   },
   "babel": {
     "presets": [
@@ -42,22 +39,5 @@
       "babel-register"
     ],
     "babel": "inherit"
-  },
-  "prettier": {
-    "tabWidth": 2,
-    "printWidth": 80,
-    "useTabs": false,
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "es5",
-    "bracketSpacing": true,
-    "jsxBracketSameLine": false,
-    "parser": "babylon"
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier --write",
-      "git add"
-    ]
   }
 }
