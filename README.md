@@ -5,13 +5,13 @@ Format, validate and generate CNPJ numbers.
 ## Installation
 
 ```bash
-npm install --save cnpj
+yarn add cnpj
 ```
 
-Or, if you prefer using `yarn`, you can run
+Or, if you prefer using `npm`, you can run
 
 ```bash
-yarn add cnpj
+npm install --save cnpj
 ```
 
 ## Usage
