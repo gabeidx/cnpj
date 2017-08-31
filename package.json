@@ -4,7 +4,7 @@
   "description": "Format, validate and generate CNPJ numbers",
   "main": "dist/index.js",
   "scripts": {
-    "prepublish": "babel src -d dist",
+    "prepare": "babel src -d dist",
     "test": "ava"
   },
   "keywords": [
