@@ -17,16 +17,16 @@ npm install --save cnpj
 ## Usage
 
 ```js
-import CNPJ from 'cnpj';
+import { validate, format, generate } from 'cnpj';
 
 // Validation
-const valid = CNPJ.validate('38.981.218/0001-47'); // true
+const valid = validate('38.981.218/0001-47'); // true
 
 // Format
-const formatted = CNPJ.format(88415345000157) // 88.415.345/0001-57
+const formatted = format(88415345000157) // 88.415.345/0001-57
 
 // Generation
-const generated = CNPJ.generate(); // randomly generated, valid CNPJ
+const generated = generate(); // randomly generated, valid CNPJ
 ```
 
 ### License
