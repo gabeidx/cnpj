@@ -11,9 +11,9 @@ test('valid unformatted CNPJs', t => {
   t.is(validate('95241373000160'), true)
 })
 
-test('valid mixed string with non numeric characters', t => {
-  t.is(validate('abcd11333977000147efgh'), true)
-  t.is(validate('76aaa.bbb182ccc.ddd634eee/fff0001ggg-74'), true)
+test('invalid mixed string with non numeric characters', t => {
+  t.false(validate('abcd11333977000147efgh'))
+  t.false(validate('76aaa.bbb182ccc.ddd634eee/fff0001ggg-74'))
 })
 
 test('invalid formatted CNPJs', t => {

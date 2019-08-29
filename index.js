@@ -17,25 +17,20 @@ const digit = numbers => {
 }
 
 /**
- * Remove non digit characters from CNPJ
- * @param {String|Number} value The CNPJ value to be cleaned
- */
-const clean = (value = '') => value.toString().replace(/[^\d]/g, '')
-
-/**
  * Validates a CNPJ
  * @param {String|Number} cnpj The CNPJ value to be validated
  * @return {Boolean}
  */
 export function validate(cnpj) {
-  const cleaned = clean(cnpj)
+  // Remove period, slash and dash characters from CNPJ
+  const cleaned = cnpj.toString().replace(/[\.\/\-]/g, '')
 
   if (
     // Must be defined
     !cleaned ||
     // Must have 14 characters
     cleaned.length !== 14 ||
-    // Must not be sequential characters (e.g.: 11111111111111, etc)
+    // Must be digits and not be sequential characters (e.g.: 11111111111111, etc)
     /^(\d)\1+$/.test(cleaned)
   ) {
     return false
@@ -54,10 +49,15 @@ export function validate(cnpj) {
  * @return {String} The formatted CNPJ
  */
 export function format(cnpj) {
-  return clean(cnpj).replace(
-    /^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/,
-    '$1.$2.$3/$4-$5'
-  )
+  return cnpj
+    .toString()
+    // Remove non digit characters
+    .replace(/[^\d]/g, '')
+    // Apply formatting
+    .replace(
+      /^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/,
+      '$1.$2.$3/$4-$5'
+    )
 }
 
 /**
