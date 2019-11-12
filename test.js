@@ -1,5 +1,5 @@
 import test from 'ava'
-import { validate, format, generate } from './index.js'
+import { validate, format, generate, cleanse } from './index.js'
 
 test('valid formatted CNPJs', t => {
   t.is(validate('51.878.216/0001-95'), true)
@@ -37,15 +37,27 @@ test('invalid sequential CNPJs', t => {
   t.is(validate(88888888888888), false)
   t.is(validate(99999999999999), false)
   t.is(validate('00000000000000'), false)
+  t.is(validate(null), false)
 })
 
 test('format CNPJ', t => {
   t.is(format(15548368000166), '15.548.368/0001-66')
   t.is(format('95241373000160'), '95.241.373/0001-60')
   t.is(format('a9b5c2d4e1f3g7h3i0j0k0l1m6n0o'), '95.241.373/0001-60')
+  t.is(format(null), null)
 })
 
 test('generate CNPJ', t => {
   t.is(validate(generate()), true)
   t.is(/^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$/.test(generate()), true)
+})
+
+test('cleanse CNPJs', t => {
+  t.is(cleanse('51.878.216/0001-95'), '51878216000195')
+  t.is(cleanse('87.344.783/0001-09'), '87344783000109')
+})
+
+test('cleanse invalid CNPJs', t => {
+  t.is(cleanse('51.878.216'), '51.878.216')
+  t.is(cleanse('ERROR'), 'ERROR')
 })
