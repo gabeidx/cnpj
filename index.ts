@@ -1,10 +1,8 @@
-const digit = (numbers) => {
+function digit(numbers: string): number {
 	let index = 2
 
-	const reverse = numbers.split('').reduce((buffer, number) => [+number].concat(buffer), [])
-
-	const sum = reverse.reduce((buffer, number) => {
-		buffer += number * index
+	const sum = [...numbers].reverse().reduce((buffer, number) => {
+		buffer += Number(number) * index
 		index = index === 9 ? 2 : index + 1
 		return buffer
 	}, 0)
@@ -16,10 +14,9 @@ const digit = (numbers) => {
 
 /**
  * Validates a CNPJ
- * @param {String|Number} cnpj The CNPJ value to be validated
- * @return {Boolean}
+ * @param cnpj The CNPJ value to be validated
  */
-export function validate(cnpj) {
+export function validate(cnpj: string | number): boolean {
 	// Remove period, slash and dash characters from CNPJ
 	const cleaned = cnpj.toString().replace(/[\.\/\-]/g, '')
 
@@ -43,10 +40,10 @@ export function validate(cnpj) {
 
 /**
  * Formats a CNPJ value
- * @param {String|Number} cnpj The CNPJ to be formatted
- * @return {String} The formatted CNPJ
+ * @param cnpj The CNPJ to be formatted
+ * @return The formatted CNPJ
  */
-export function format(cnpj) {
+export function format(cnpj: string | number): string {
 	return (
 		cnpj
 			.toString()
@@ -59,9 +56,9 @@ export function format(cnpj) {
 
 /**
  * Generates a valid CNPJ
- * @return {String} The generated CNPJ
+ * @return The generated CNPJ
  */
-export function generate() {
+export function generate(): string {
 	let cnpj = ''
 	let i = 12
 
