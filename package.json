@@ -3,9 +3,25 @@
   "version": "3.0.0",
   "description": "Format, validate and generate CNPJ numbers",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts"
+  ],
+  "repository": "gabrielizaias/cnpj",
+  "license": "MIT",
   "scripts": {
-    "prepare": "babel ./index.js -d dist",
+    "prepublishOnly": "yarn run build",
+    "prebuild": "del ./dist",
+    "build": "tsc",
     "test": "ava"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "ava": "^3.9.0",
+    "del-cli": "^3.0.1",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5"
   },
   "keywords": [
     "cnpj",
@@ -13,33 +29,12 @@
     "brasil",
     "brazil"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gabrielizaias/cnpj.git"
-  },
-  "bugs": {
-    "url": "https://github.com/gabrielizaias/cnpj/issues"
-  },
-  "author": {
-    "name": "Gabriel Izaias",
-    "email": "gabriel.izaias@gmail.com",
-    "url": "https://izaias.co"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "@babel/cli": "^7.10.3",
-    "@babel/preset-env": "^7.10.3",
-    "@babel/register": "^7.10.3",
-    "ava": "^3.9.0"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
-  },
   "ava": {
+    "extensions": [
+      "ts"
+    ],
     "require": [
-      "@babel/register"
+      "ts-node/register"
     ]
   }
 }

@@ -18,6 +18,7 @@ npm install --save cnpj
 
 ```js
 import { validate, format, generate } from 'cnpj';
+// import * as CNPJ from 'cnpj;s
 
 // Validation
 const valid = validate('38.981.218/0001-47'); // true
