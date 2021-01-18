@@ -11,7 +11,7 @@ yarn add cnpj
 Or, if you prefer using `npm`, you can run
 
 ```bash
-npm install --save cnpj
+npm install cnpj
 ```
 
 ## Usage
