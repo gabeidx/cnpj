@@ -35,4 +35,4 @@ const generated = generate(); // randomly generated, valid CNPJ
 
 ### License
 
-[MIT License](https://gabrielizaias.mit-license.org) &copy; Gabriel Izaias
+[MIT License](https://gabrielizaias.mit-license.org) &copy; [Gabriel Silva](https://gabe.id)
