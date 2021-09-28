@@ -1,5 +1,5 @@
-import test from 'ava'
-import { validate, format, generate } from './index'
+import { default as test } from 'ava'
+import { validate, format, generate } from './index.js'
 
 test('valid formatted CNPJs', (t) => {
 	t.is(validate('51.878.216/0001-95'), true)
