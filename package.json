@@ -12,9 +12,11 @@
   "repository": "gabrielizaias/cnpj",
   "license": "MIT",
   "scripts": {
-    "build": "del ./dist && tsc",
+    "prebuild": "del ./dist",
+    "build": "tsc",
     "lint": "prettier --write '**/*.ts'",
     "prepublishOnly": "npm run build",
+    "pretest": "npm run build",
     "test": "ava"
   },
   "devDependencies": {

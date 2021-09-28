@@ -23,6 +23,7 @@
     "target": "esnext"
   },
   "exclude": [
+    "dist",
     "test.ts",
     "mod.ts"
   ]
