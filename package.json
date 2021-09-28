@@ -2,6 +2,7 @@
   "name": "cnpj",
   "version": "3.2.1",
   "description": "Format, validate and generate CNPJ numbers",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
