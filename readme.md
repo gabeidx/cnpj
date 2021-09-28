@@ -15,6 +15,7 @@ import { validate, format, generate } from 'https://deno.land/x/cnpj/mod.ts';
 ```bash
 npm install cnpj
 ```
+
 ```ts
 import { validate, format, generate } from 'cnpj';
 ```

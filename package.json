@@ -11,7 +11,7 @@
   "repository": "gabrielizaias/cnpj",
   "license": "MIT",
   "scripts": {
-    "prepublishOnly": "yarn run build",
+    "prepublishOnly": "npm run build",
     "build": "del ./dist && tsc",
     "test": "ava"
   },
