@@ -1,0 +1,9 @@
+{
+	"$schema": "https://jsr.io/schema/config-file.v1.json",
+	"name": "@brazil/cnpj",
+	"version": "4.0.3",
+	"exports": "./mod.ts",
+	"publish": {
+		"include": ["readme.md", "license", "mod.ts", "index.ts"]
+	}
+}
