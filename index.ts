@@ -1,17 +1,3 @@
-function digit(numbers: string): number {
-	let index = 2
-
-	const sum = [...numbers].reverse().reduce((buffer, number) => {
-		buffer += Number(number) * index
-		index = index === 9 ? 2 : index + 1
-		return buffer
-	}, 0)
-
-	const mod = sum % 11
-
-	return mod < 2 ? 0 : 11 - mod
-}
-
 /**
  * Validates a CNPJ
  * @param cnpj The CNPJ value to be validated
@@ -70,4 +56,18 @@ export function generate(): string {
 	cnpj += digit(cnpj)
 
 	return format(cnpj)
+}
+
+function digit(numbers: string): number {
+	let index = 2
+
+	const sum = [...numbers].reverse().reduce((buffer, number) => {
+		buffer += Number(number) * index
+		index = index === 9 ? 2 : index + 1
+		return buffer
+	}, 0)
+
+	const mod = sum % 11
+
+	return mod < 2 ? 0 : 11 - mod
 }
