@@ -1,6 +1,6 @@
 {
 	"name": "cnpj",
-	"version": "4.0.3",
+	"version": "5.0.0",
 	"description": "Format, validate and generate CNPJ numbers",
 	"type": "module",
 	"main": "dist/index.js",
