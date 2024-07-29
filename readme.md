@@ -4,20 +4,30 @@ Format, validate and generate CNPJ numbers.
 
 ## Installation
 
-### Deno
-
-```ts
-import { validate, format, generate } from 'https://deno.land/x/cnpj/mod.ts';
-```
-
 ### Node
 
 ```bash
 npm install cnpj
 ```
 
+or, if you are using jsr
+
+```bash
+npx jsr add @brazil/cnpj
+```
+
 ```ts
 import { validate, format, generate } from 'cnpj';
+```
+
+### Deno
+
+```bash
+deno add @brazil/cnpj
+```
+
+```ts
+import { validate, format, generate } from '@brazil/cnpj';
 ```
 
 ## Usage
